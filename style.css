@@ -1,0 +1,513 @@
+/* =========================================
+   1. GLOBAL / RESET STYLES
+   ========================================= */
+
+/* Reset default spacing and set a consistent box model for everything */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CSS Variables - change these to quickly re-theme the whole site */
+:root {
+  --color-primary: #1e6fd9;   /* main blue */
+  --color-primary-dark: #14509e; /* darker blue for hover states */
+  --color-secondary: #2e9e5b; /* main green (accents / success) */
+  --color-white: #ffffff;
+  --color-light-bg: #f5f8fc;  /* very light blue-grey background */
+  --color-text: #2b2b2b;
+  --color-text-light: #6b6b6b;
+  --radius: 12px;             /* rounded corners used everywhere */
+  --shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  --transition: 0.3s ease;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-text);
+  line-height: 1.6;
+  background-color: var(--color-white);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Reusable section title styles */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--color-text-light);
+  margin-top: 8px;
+  margin-bottom: 40px;
+}
+
+/* =========================================
+   2. BUTTONS (reused across the site)
+   ========================================= */
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform var(--transition), background-color var(--transition), color var(--transition);
+}
+
+/* Solid blue button */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-3px); /* subtle lift on hover */
+}
+
+/* Outlined green button (used for "View More") */
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   3. HEADER / NAVBAR
+   ========================================= */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.logo span {
+  color: var(--color-secondary);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  position: relative;
+  transition: color var(--transition);
+}
+
+/* Small underline animation on hover for nav links */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-secondary);
+  transition: width var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--color-primary);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger menu - hidden on desktop, shown on mobile (see media query below) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background-color: var(--color-primary-dark);
+  border-radius: 2px;
+}
+
+/* =========================================
+   4. HERO SECTION
+   ========================================= */
+
+.hero {
+  /* Background travel image with a dark overlay so text stays readable */
+  background:
+    linear-gradient(rgba(10, 30, 60, 0.55), rgba(10, 30, 60, 0.55)),
+    url('https://picsum.photos/id/1036/1600/900') center/cover no-repeat;
+  height: 90vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-white);
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 28px;
+  font-weight: 300;
+}
+
+/* =========================================
+   5. POPULAR DESTINATIONS
+   ========================================= */
+
+.destinations {
+  padding: 80px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* CSS Grid: responsive cards that wrap automatically */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+/* Hover effect: card lifts up slightly */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body h3 {
+  color: var(--color-primary-dark);
+  margin-bottom: 8px;
+}
+
+.card-body p {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+/* =========================================
+   6. TOUR PACKAGES
+   ========================================= */
+
+.packages {
+  padding: 80px 24px;
+  background-color: var(--color-light-bg);
+}
+
+.package-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.package-card {
+  position: relative;
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.package-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Highlighted "most popular" package stands out with a green border */
+.package-card.featured {
+  border: 2px solid var(--color-secondary);
+}
+
+.badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.package-card h3 {
+  color: var(--color-primary-dark);
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.duration {
+  color: var(--color-text-light);
+  margin-bottom: 16px;
+}
+
+.package-features {
+  margin-bottom: 24px;
+}
+
+.package-features li {
+  padding: 6px 0;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+}
+
+/* Little green checkmark before each feature */
+.package-features li::before {
+  content: "✓ ";
+  color: var(--color-secondary);
+  font-weight: 700;
+}
+
+/* =========================================
+   7. GALLERY
+   ========================================= */
+
+.gallery {
+  padding: 80px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.04);
+}
+
+/* =========================================
+   8. CONTACT SECTION
+   ========================================= */
+
+.contact {
+  padding: 80px 24px;
+  background-color: var(--color-light-bg);
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background-color: var(--color-white);
+  padding: 32px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: var(--radius);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  resize: vertical;
+  transition: border-color var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.contact-form .btn {
+  align-self: center;
+  width: 100%;
+  border: none;
+}
+
+.form-success {
+  text-align: center;
+  color: var(--color-secondary);
+  font-weight: 500;
+  min-height: 20px; /* keeps layout stable before message appears */
+}
+
+/* =========================================
+   9. FOOTER
+   ========================================= */
+
+.footer {
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.social-icons {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.social-icons a:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-4px);
+}
+
+/* =========================================
+   10. RESPONSIVE / MOBILE STYLES
+   ========================================= */
+
+@media (max-width: 768px) {
+  /* Show the hamburger icon and hide the normal nav links */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-white);
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    box-shadow: var(--shadow);
+
+    /* Hidden by default - slides down when .active class is toggled by JS */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition);
+  }
+
+  .nav-links.active {
+    max-height: 300px;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 16px 0;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
