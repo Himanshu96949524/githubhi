@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TravelGo — Goa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="logo" href="index.html">TravelGo</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="destinations.html" class="active">Destinations</a>
+                <a href="packages.html">Packages</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-hero">
+            <h1>Goa</h1>
+            <p>Sun, sand and vibrant nightlife — Goa is India’s coastal playground.</p>
+        </section>
+
+        <section class="detail">
+            <div class="grid">
+                <div>
+                    <h2>Beaches & Nightlife</h2>
+                    <p>Enjoy golden beaches, watersports, and lively evening markets and beach shacks.</p>
+                    <a class="btn" href="packages.html">View Packages</a>
+                    <a class="btn" href="destinations.html" style="background:#555;margin-left:8px">Back to
+                        Destinations</a>
+                </div>
+
+                <div>
+                    <div class="detail-gallery">
+                        <img src="./assets/goa1.webp" alt="Goa Beach">
+                        <img src="./assets/beach-goa-india_78361-4735.avif" alt="Goa coastline">
+                        <img src="./assets/goa jesus.jpg" alt="Church in Goa">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="lightbox" class="lightbox hidden">
+        <button id="closeLightbox" class="close">×</button>
+        <img id="lightboxImg" src="" alt="">
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> TravelGo. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

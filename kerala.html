@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TravelGo — Kerala Backwaters</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="logo" href="index.html">TravelGo</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="destinations.html" class="active">Destinations</a>
+                <a href="packages.html">Packages</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-hero">
+            <h1>Kerala Backwaters</h1>
+            <p>Houseboat cruises, serene canals and lush tea gardens.</p>
+        </section>
+
+        <section class="detail">
+            <div class="grid">
+                <div>
+                    <h2>Houseboats & Tea Gardens</h2>
+                    <p>Float through tranquil backwaters on traditional houseboats and visit the rolling tea gardens of
+                        Munnar.</p>
+                    <a class="btn" href="packages.html">View Packages</a>
+                    <a class="btn" href="destinations.html" style="background:#555;margin-left:8px">Back to
+                        Destinations</a>
+                </div>
+
+                <div>
+                    <div class="detail-gallery">
+                        <img src="./assets/kerala.jpg" alt="Kerala backwaters">
+                        <img src="./assets/kerala-1724266265021.webp" alt="Houseboat in Kerala">
+                        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=85" alt="Kerala waterways">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="lightbox" class="lightbox hidden">
+        <button id="closeLightbox" class="close">×</button>
+        <img id="lightboxImg" src="" alt="">
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> TravelGo. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

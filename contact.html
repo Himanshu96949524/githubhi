@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TravelGo — Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="logo" href="index.html">TravelGo</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="packages.html">Packages</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html" class="active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container contact-page">
+        <section class="page-hero">
+            <h1>Get In Touch</h1>
+            <p>Have questions? Send us a message and we'll reply soon.</p>
+        </section>
+
+        <section class="contact-grid">
+            <form id="contactForm" class="contact-form">
+                <label>Name<input required name="name" /></label>
+                <label>Email<input type="email" required name="email" /></label>
+                <label>Phone<input name="phone" /></label>
+                <label>Preferred Package
+                    <select id="package" name="package">
+                        <option value="Golden Triangle">Golden Triangle</option>
+                        <option value="Kerala Backwaters">Kerala Backwaters</option>
+                        <option value="Goa Beach Holiday">Goa Beach Holiday</option>
+                        <option value="Jaipur Heritage Getaway">Jaipur Heritage Getaway</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </label>
+                <label id="otherPackageField" hidden>Enter preferred package
+                    <input id="otherPackage" name="otherPackage" />
+                </label>
+                <label>Message<textarea name="message"></textarea></label>
+                <button class="btn" type="submit">Submit Inquiry</button>
+            </form>
+
+            <aside class="contact-info">
+                <h3>Contact Information</h3>
+                <p><strong>Phone:</strong> +91 98765 43210</p>
+                <p><strong>Email:</strong> info@travelgo.example</p>
+                <p><strong>Office:</strong> 12 TravelGo Street, Mumbai, India</p>
+                <p><strong>Hours:</strong> Mon–Sat 9:00–18:00</p>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> TravelGo. All rights reserved.</p>
+            <div class="social">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

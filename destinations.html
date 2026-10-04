@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TravelGo — Destinations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="logo" href="index.html">TravelGo</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="destinations.html" class="active">Destinations</a>
+                <a href="packages.html">Packages</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-hero">
+            <h1>Popular Destinations in India</h1>
+            <p>Discover India's unforgettable landmarks, coastlines, and backwaters curated just for you.</p>
+        </section>
+
+        <section class="search-bar">
+            <input id="search" placeholder="Search destinations...">
+        </section>
+
+        <section id="dest-grid" class="grid">
+            <article class="card" data-name="Agra">
+                <img src="./assets/taj front.jpg" alt="Agra">
+                <h3>Agra</h3>
+                <p>Home of the Taj Mahal and Agra Fort — timeless Mughal architecture.</p>
+                <a class="btn" href="agra.html">Explore Agra</a>
+            </article>
+
+            <article class="card" data-name="Jaipur">
+                <img src="./assets/jantar mantar.jpg" alt="Jaipur">
+                <h3>Jaipur</h3>
+                <p>The Pink City — Hawa Mahal, Amber Fort, vibrant bazaars and palaces.</p>
+                <a class="btn" href="jaipur.html">Explore Jaipur</a>
+            </article>
+
+            <article class="card" data-name="Kerala">
+                <img src="./assets/kerala-1724266265021.webp" alt="Kerala">
+                <h3>Kerala Backwaters</h3>
+                <p>Relax on houseboats, lush greenery and serene waterways.</p>
+                <a class="btn" href="kerala.html">Explore Kerala</a>
+            </article>
+
+            <article class="card" data-name="Goa">
+                <img src="./assets/goa1.webp" alt="Goa">
+                <h3>Goa</h3>
+                <p>Sun-kissed beaches, lively nightlife, and coastal charm.</p>
+                <a class="btn" href="goa.html">Explore Goa</a>
+            </article>
+        </section>
+    </main>
+
+    <div id="lightbox" class="lightbox hidden">
+        <button id="closeLightbox" class="close">×</button>
+        <img id="lightboxImg" src="" alt="">
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> TravelGo. All rights reserved.</p>
+            <div class="social">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

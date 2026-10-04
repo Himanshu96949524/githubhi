@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,195 +8,116 @@
 
   <!-- Google Font: Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
 
   <!-- Our own CSS file -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-
-  <!-- ========== HEADER ========== -->
-  <header class="header">
-    <nav class="navbar">
-      <!-- Website Logo -->
-      <div class="logo">Travel<span>Go</span></div>
-
-      <!-- Hamburger icon for mobile menu (shown only on small screens) -->
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <!-- Navigation Links -->
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#destinations">Destinations</a></li>
-        <li><a href="#packages">Packages</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="index.html">TravelGo</a>
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="packages.html">Packages</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- ========== HERO SECTION ========== -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>Explore Incredible India</h1>
-      <p>Discover India's most magical destinations at the best prices.</p>
-      <a href="#packages" class="btn btn-primary">Book Now</a>
-    </div>
-  </section>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Explore Incredible India</h1>
+        <p>Discover India's most magical destinations at the best prices</p>
+        <a class="btn" href="packages.html">Book Now</a>
+      </div>
+    </section>
 
-  <!-- ========== POPULAR DESTINATIONS ========== -->
-  <section class="destinations" id="destinations">
-    <h2 class="section-title">Popular Destinations in India</h2>
-    <p class="section-subtitle">Handpicked places our travelers love the most</p>
-
-    <div class="card-grid">
-
-      <!-- Destination Card 1 -->
-      <div class="card">
-        <img src="https://picsum.photos/id/1043/400/300" alt="Historic Indian monument" />
-        <div class="card-body">
+    <section class="preview">
+      <h2>Featured Destinations</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="./assets/agra-fort-agra-uttar pradesh-3-attr-hero.jpg" alt="Agra">
           <h3>Agra</h3>
-          <p>Home to the timeless Taj Mahal, a wonder of the world.</p>
-          <a href="#" class="btn btn-outline">View More</a>
+          <a class="btn small" href="destinations.html">View More</a>
         </div>
-      </div>
-
-      <!-- Destination Card 2 -->
-      <div class="card">
-        <img src="https://picsum.photos/id/1044/400/300" alt="Palace and fort" />
-        <div class="card-body">
-          <h3>Jaipur, Rajasthan</h3>
-          <p>The Pink City — royal palaces, forts, and vibrant bazaars.</p>
-          <a href="#" class="btn btn-outline">View More</a>
+        <div class="card">
+          <img src="./assets/jantar mantar.jpg" alt="Jaipur">
+          <h3>Jaipur</h3>
+          <a class="btn small" href="destinations.html">View More</a>
         </div>
-      </div>
-
-      <!-- Destination Card 3 -->
-      <div class="card">
-        <img src="https://picsum.photos/id/1024/400/300" alt="Backwaters and palm trees" />
-        <div class="card-body">
-          <h3>Kerala Backwaters</h3>
-          <p>Cruise through calm palm-fringed canals on a traditional houseboat.</p>
-          <a href="#" class="btn btn-outline">View More</a>
+        <div class="card">
+          <img src="./assets/kerala-1724266265021.webp" alt="Kerala">
+          <h3>Kerala</h3>
+          <a class="btn small" href="destinations.html">View More</a>
         </div>
-      </div>
-
-      <!-- Destination Card 4 -->
-      <div class="card">
-        <img src="https://picsum.photos/id/1041/400/300" alt="Beach coastline" />
-        <div class="card-body">
+        <div class="card">
+          <img src="./assets/goa1.webp" alt="Goa">
           <h3>Goa</h3>
-          <p>Sun-soaked beaches, laid-back shacks, and lively nightlife.</p>
-          <a href="#" class="btn btn-outline">View More</a>
+          <a class="btn small" href="destinations.html">View More</a>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+  </main>
 
-  <!-- ========== TOUR PACKAGES ========== -->
-  <section class="packages" id="packages">
-    <h2 class="section-title">India Tour Packages</h2>
-    <p class="section-subtitle">Simple pricing, unforgettable memories</p>
-
-    <div class="package-grid">
-
-      <!-- Package Card 1 -->
-      <div class="package-card">
-        <h3>Golden Triangle Tour</h3>
-        <p class="price">&#8377;15,999</p>
-        <p class="duration">5 Days / 4 Nights</p>
-        <ul class="package-features">
-          <li>Delhi, Agra &amp; Jaipur</li>
-          <li>Hotel stay included</li>
-          <li>Guided monument tours</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary">Book Now</a>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> TravelGo. All rights reserved.</p>
+      <div class="social">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
       </div>
-
-      <!-- Package Card 2 (highlighted as most popular) -->
-      <div class="package-card featured">
-        <span class="badge">Most Popular</span>
-        <h3>Kerala Backwaters Escape</h3>
-        <p class="price">&#8377;22,499</p>
-        <p class="duration">6 Days / 5 Nights</p>
-        <ul class="package-features">
-          <li>Houseboat stay in Alleppey</li>
-          <li>Munnar tea gardens</li>
-          <li>All meals included</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary">Book Now</a>
-      </div>
-
-      <!-- Package Card 3 -->
-      <div class="package-card">
-        <h3>Goa Beach Holiday</h3>
-        <p class="price">&#8377;12,999</p>
-        <p class="duration">4 Days / 3 Nights</p>
-        <ul class="package-features">
-          <li>Beachfront resort</li>
-          <li>Water sports included</li>
-          <li>North &amp; South Goa sightseeing</li>
-        </ul>
-        <a href="#contact" class="btn btn-primary">Book Now</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========== GALLERY ========== -->
-  <section class="gallery" id="gallery">
-    <h2 class="section-title">India Travel Gallery</h2>
-    <p class="section-subtitle">A glimpse into the journeys we offer</p>
-
-    <div class="gallery-grid">
-      <img src="https://picsum.photos/id/1043/400/400" alt="Historic monument" />
-      <img src="https://picsum.photos/id/1044/400/400" alt="Fort and palace" />
-      <img src="https://picsum.photos/id/1041/400/400" alt="Beach coastline" />
-      <img src="https://picsum.photos/id/1025/400/400" alt="Wildlife safari" />
-      <img src="https://picsum.photos/id/1039/400/400" alt="Hill station view" />
-      <img src="https://picsum.photos/id/1050/400/400" alt="Local market street" />
-    </div>
-  </section>
-
-  <!-- ========== CONTACT SECTION ========== -->
-  <section class="contact" id="contact">
-    <h2 class="section-title">Get In Touch</h2>
-    <p class="section-subtitle">Have questions? Send us a message and we'll reply soon.</p>
-
-    <!-- 
-      This form doesn't submit to a real server.
-      script.js handles the "submit" event to show a thank-you message instead. 
-    -->
-    <form class="contact-form" id="contactForm">
-      <input type="text" id="name" name="name" placeholder="Your Name" required />
-      <input type="email" id="email" name="email" placeholder="Your Email" required />
-      <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn btn-primary">Submit</button>
-
-      <!-- This message appears after the form is submitted -->
-      <p id="formSuccess" class="form-success"></p>
-    </form>
-  </section>
-
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer">
-    <p>&copy; <span id="year"></span> TravelGo. All rights reserved.</p>
-
-    <!-- Simple text-based social icons (no external icon library needed) -->
-    <div class="social-icons">
-      <a href="#" aria-label="Facebook">FB</a>
-      <a href="#" aria-label="Twitter">TW</a>
-      <a href="#" aria-label="Instagram">IG</a>
-      <a href="#" aria-label="YouTube">YT</a>
     </div>
   </footer>
+  </footer>
 
-  <!-- Our own JavaScript file -->
+  <div id="lightbox" class="lightbox hidden">
+    <button id="closeLightbox" class="close">×</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
   <script src="script.js"></script>
 </body>
+
+</html>
+
+<!-- ========== GALLERY ========== -->
+<section class="gallery" id="gallery">
+  <h2 class="section-title">India Travel Gallery</h2>
+  <p class="section-subtitle">A glimpse into the journeys we offer</p>
+
+  <div class="gallery-grid">
+    <img src="https://picsum.photos/id/1043/400/400" alt="Historic monument" />
+    <img src="https://picsum.photos/id/1044/400/400" alt="Fort and palace" />
+    <img src="https://picsum.photos/id/1041/400/400" alt="Beach coastline" />
+    <img src="https://picsum.photos/id/1025/400/400" alt="Wildlife safari" />
+    <img src="https://picsum.photos/id/1039/400/400" alt="Hill station view" />
+    <img src="https://picsum.photos/id/1050/400/400" alt="Local market street" />
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <p>&copy; <span id="year"></span> TravelGo. All rights reserved.</p>
+
+  <!-- Simple text-based social icons (no external icon library needed) -->
+  <div class="social-icons">
+    <a href="#" aria-label="Facebook">FB</a>
+    <a href="#" aria-label="Twitter">TW</a>
+    <a href="#" aria-label="Instagram">IG</a>
+    <a href="#" aria-label="YouTube">YT</a>
+  </div>
+</footer>
+
+<!-- Our own JavaScript file -->
+<script src="script.js"></script>
+</body>
+
 </html>

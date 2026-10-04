@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TravelGo — Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="logo" href="index.html">TravelGo</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="destinations.html">Destinations</a>
+                <a href="packages.html">Packages</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-hero">
+            <h1>India Travel Gallery - A glimpse into the journeys we offer</h1>
+        </section>
+
+        <section id="gallery">
+            <h2>Agra</h2>
+            <div class="gallery-grid">
+                <img src="./assets/taj front.jpg" >
+                <img src="./assets/agra-fort-agra-uttar pradesh-3-attr-hero.jpg" alt="Agra Fort" />
+                <img src="./assets/agrastreet.jpg" alt="Agra Street" />
+            </div>
+
+            <h2>Jaipur</h2>
+            <div class="gallery-grid">
+                <img src="./assets/East_facade_Hawa_Mahal_Jaipur_from_ground_level_(July_2022)_-_img_01.jpg" alt="Hawa Mahal" />
+                <img src="./assets/amberfort.webp" alt="Amber Fort" />
+                <img src="./assets/Jaipur_03-2016_39_Jal_Mahal_-_Water_Palace.jpg" alt="Jal mahal" />
+            </div>
+
+            <h2>Kerala</h2>
+            <div class="gallery-grid">
+                <img src="./assets/kerala.jpg" alt="Tea Gardens" />
+            </div>
+
+            <h2>Goa</h2>
+            <div class="gallery-grid">
+                <img src="./assets/beach-goa-india_78361-4735.avif" alt="Goa Beach" />
+                <img src="./assets/goa jesus.jpg" alt="Goa Basilica of Bom Jesus" />
+                <img src="./assets/goa1.webp" alt="Palolem Beach" />
+            </div>
+        </section>
+    </main>
+
+    <div id="lightbox" class="lightbox hidden">
+        <button id="closeLightbox" class="close">×</button>
+        <img id="lightboxImg" src="" alt="">
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© <span id="year"></span> TravelGo. All rights reserved.</p>
+            <div class="social">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

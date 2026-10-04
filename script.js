@@ -1,57 +1,79 @@
-// =========================================
-// 1. MOBILE NAVIGATION TOGGLE
-// =========================================
-// When the hamburger icon is clicked, show/hide the nav links.
-// This is done by toggling a CSS class called "active" (see style.css).
+// Shared JS for TravelGo: year injection, simple search, gallery lightbox, contact form stub
+document.addEventListener('DOMContentLoaded', () => {
+  // update all footer year fields
+  document.querySelectorAll('#year').forEach(el => el.textContent = new Date().getFullYear());
 
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
+  // search filter on destinations page
+  const search = document.getElementById('search');
+  if (search) {
+    search.addEventListener('input', () => {
+      const q = search.value.trim().toLowerCase();
+      document.querySelectorAll('#dest-grid .card').forEach(card => {
+        const name = (card.dataset.name || '').toLowerCase();
+        card.style.display = name.includes(q) ? '' : 'none';
+      });
+    });
+  }
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
+  // gallery & detail lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeBtn = document.getElementById('closeLightbox');
 
-// Close the mobile menu automatically when a link is clicked
-// (nicer experience — user doesn't have to tap the hamburger again)
-const allNavLinks = navLinks.querySelectorAll('a');
-allNavLinks.forEach((link) => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('active');
+  const galleryImgs = Array.from(document.querySelectorAll('.gallery-grid img'));
+  const detailImgs = Array.from(document.querySelectorAll('.detail-gallery img'));
+  const destGridImgs = Array.from(document.querySelectorAll('#dest-grid .card img'));
+  const lightboxTargets = galleryImgs.concat(detailImgs, destGridImgs);
+
+  lightboxTargets.forEach(img => {
+    if (!img) return;
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', (e) => {
+      if (!lightbox || !lightboxImg) return;
+      // prefer data-large if present, otherwise use src
+      const large = img.dataset.large || img.src;
+      lightboxImg.src = large;
+      lightbox.classList.remove('hidden');
+      e.stopPropagation();
+    });
   });
+
+  if (closeBtn) closeBtn.addEventListener('click', () => { if (lightbox) lightbox.classList.add('hidden'); });
+  if (lightbox) lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.add('hidden'); });
+
+  // contact form stub
+  const contactForm = document.getElementById('contactForm');
+  const formSuccess = document.getElementById('formSuccess');
+  if (contactForm) {
+    const packageSelect = document.getElementById('package');
+    const otherPackageField = document.getElementById('otherPackageField');
+    const otherPackageInput = document.getElementById('otherPackage');
+    const updateOtherPackageField = () => {
+      if (!packageSelect || !otherPackageField || !otherPackageInput) return;
+      const isOther = packageSelect.value === 'Other';
+      otherPackageField.hidden = !isOther;
+      otherPackageInput.required = isOther;
+      if (!isOther) otherPackageInput.value = '';
+    };
+
+    if (packageSelect) packageSelect.addEventListener('change', updateOtherPackageField);
+    updateOtherPackageField();
+
+    contactForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const name = (document.getElementById('name') || {}).value || 'Guest';
+      if (formSuccess) formSuccess.textContent = `Thank you, ${name}! Your message has been received.`;
+      contactForm.reset();
+      updateOtherPackageField();
+      setTimeout(() => { if (formSuccess) formSuccess.textContent = ''; }, 5000);
+    });
+  }
+
+  // mobile nav toggle (if present)
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
+  }
 });
-
-
-// =========================================
-// 2. CONTACT FORM SUBMISSION
-// =========================================
-// This is a front-end-only demo, so there is no real server to send data to.
-// Instead, we stop the normal page reload and show a friendly success message.
-
-const contactForm = document.getElementById('contactForm');
-const formSuccess = document.getElementById('formSuccess');
-
-contactForm.addEventListener('submit', function (event) {
-  event.preventDefault(); // stop the form from reloading the page
-
-  // Grab the values the user typed in
-  const name = document.getElementById('name').value;
-
-  // Show a personalized thank-you message
-  formSuccess.textContent = `Thank you, ${name}! Your message has been sent. We'll get back to you soon.`;
-
-  // Clear the form fields
-  contactForm.reset();
-
-  // Optional: hide the message again after a few seconds
-  setTimeout(() => {
-    formSuccess.textContent = '';
-  }, 5000);
-});
-
-
-// =========================================
-// 3. AUTO-UPDATE FOOTER YEAR
-// =========================================
-// Keeps the copyright year correct automatically, every year, with no manual edits.
-
-document.getElementById('year').textContent = new Date().getFullYear();
