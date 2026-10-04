@@ -23,6 +23,7 @@
         <a href="index.html" class="active">Home</a>
         <a href="destinations.html">Destinations</a>
         <a href="packages.html">Packages</a>
+        <a href="booking.html">My Booking</a>
         <a href="gallery.html">Gallery</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -35,6 +36,11 @@
         <h1>Explore Incredible India</h1>
         <p>Discover India's most magical destinations at the best prices</p>
         <a class="btn" href="packages.html">Book Now</a>
+        <form class="home-search" action="destinations.html" method="get">
+          <label for="homeSearch">Where would you like to go?</label>
+          <div><input id="homeSearch" name="q" placeholder="Search destinations or experiences" />
+          <button class="btn" type="submit">Search</button></div>
+        </form>
       </div>
     </section>
 
@@ -47,7 +53,7 @@
           <a class="btn small" href="destinations.html">View More</a>
         </div>
         <div class="card">
-          <img src="./assets/jantar mantar.jpg" alt="Jaipur">
+          <img class="hawa-mahal-photo" src="./assets/East_facade_Hawa_Mahal_Jaipur_from_ground_level_(July_2022)_-_img_01.jpg" alt="Hawa Mahal in Jaipur">
           <h3>Jaipur</h3>
           <a class="btn small" href="destinations.html">View More</a>
         </div>
@@ -61,6 +67,16 @@
           <h3>Goa</h3>
           <a class="btn small" href="destinations.html">View More</a>
         </div>
+      </div>
+    </section>
+
+    <section class="preview">
+      <h2>What travellers say</h2>
+      <p class="section-subtitle">A few kind words from recent journeys</p>
+      <div class="grid reviews-grid">
+        <article class="card review"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“Every detail was thoughtfully planned. Our guide made the Golden Triangle feel effortless and memorable.”</p><strong>— Ananya, Delhi & Agra</strong><small>★★★★★ 5.0</small></article>
+        <article class="card review"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“The Kerala houseboat and tea gardens were beautiful. Friendly local support made the whole trip relaxing.”</p><strong>— Rohan, Kerala</strong><small>★★★★★ 5.0</small></article>
+        <article class="card review"><div class="stars" aria-label="4 out of 5 stars">★★★★☆</div><p>“A lovely Goa break with a great hotel and plenty of time to explore at our own pace.”</p><strong>— Meera, Goa</strong><small>★★★★☆ 4.8</small></article>
       </div>
     </section>
 
